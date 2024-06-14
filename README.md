@@ -2,7 +2,7 @@
 
 **Acknowledgements**
 
-This project is based on MitogenomeAssemblyPipeline(https://github.com/rozgaw/MitogenomeAssemblyPipeline). Many thanks to the original author(s) for their work.
+This project is based on MitogenomeAssemblyPipeline (https://github.com/rozgaw/MitogenomeAssemblyPipeline). Many thanks to the original author(s) for their work.
 
 **Dependencies**
 - SRA toolkit https://github.com/ncbi/sra-tools
