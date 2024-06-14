@@ -84,6 +84,8 @@ This project is based on MitogenomeAssemblyPipeline (https://github.com/rozgaw/M
   - reference: Name of seed sequence fasta file
   - output_dir: Name of output directory that will be created containing the mitogenome assembly.
 - Run the file in the terminal
+  - Command: `python3 EditedPipeline.py`
+- NOTE: Only filename, reference, and output_dir need to be re-named as forward, reverse, out_forward, & out_reverse will be automatically formatted accordingly. They can be changed if desired. 
 
 
 # Comparing Assembled Mitogenome to Existing 
