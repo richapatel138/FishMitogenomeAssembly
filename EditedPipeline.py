@@ -57,12 +57,12 @@ def run_get_organelle(reference, out_forward, out_reverse, output_dir):
 #just need to change the filename, refrence (seed file name), and output_dir here in order to run the script.
 def main():
     # Define file names
-    filename = 'SRR15139194'
+    filename = 'SRR15139196'
     forward = filename + '_1.fastq'
     reverse = filename + '_2.fastq'
     out_forward = 'out.' + filename +'_1.fastq'
     out_reverse = 'out.' + filename +'_2.fastq'
-    reference = 'CO1.fasta'
+    reference = 'N2.fasta'
     output_dir = 'fish_assembly'
 
 # Run the commands
