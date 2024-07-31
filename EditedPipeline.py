@@ -62,7 +62,7 @@ def main():
     reverse = filename + '_2.fastq'
     out_forward = 'out.' + filename +'_1.fastq'
     out_reverse = 'out.' + filename +'_2.fastq'
-    reference = 'N2.fasta'
+    reference = 'ND2.fasta'
     output_dir = 'fish_assembly'
 
 # Run the commands
