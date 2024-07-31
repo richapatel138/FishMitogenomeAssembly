@@ -8,6 +8,7 @@ Created on Wed Jul 31 14:55:50 2024
 
 import subprocess
 
+#Defined the GetComplete feature of the code 
 def run_get_complete(graph_file, complete_dir):
     try:
         print("Running GetComplete...")
@@ -16,7 +17,7 @@ def run_get_complete(graph_file, complete_dir):
     except subprocess.CalledProcessError as e: #if an error occurs
         print(f"Error running Get Complete: {e}")
 
-#just need to change the filename, refrence, and output_dir here in order to run the script.
+#just need to change the graph_file and complete_dir in order to run the script.
 def main():
     # Define file names
     graph_file = "animal_mt.K105.contigs.graph1.selected_graph.gfa"
