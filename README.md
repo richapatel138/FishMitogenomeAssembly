@@ -1,5 +1,7 @@
 # FishMitogenomeAssembly
 
+This pipeline assembles and annotates mitochondrial genomes from raw SRA sequencing data. It performs quality control, adaptor trimming, and de novo assembly using GetOrganelle with a reference seed. Annotations are added with MitoZ, and the final mitogenome can be visualized with MitoFish or compared to published references using BLAST.
+
 **Acknowledgements**
 
 This project is based on MitogenomeAssemblyPipeline (https://github.com/rozgaw/MitogenomeAssemblyPipeline). Many thanks to the original author(s) for their work.
