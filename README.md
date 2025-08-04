@@ -47,27 +47,38 @@ This project is based on MitogenomeAssemblyPipeline (https://github.com/rozgaw/M
 3. **Command:**
    - `get_organelle_from_reads.py -s ND2.fasta -1 out.SRR15139196_1.fastq -2 out.SRR15139196_2.fastq -R 10 -k 21,45,65,85,105 -F animal_mt -o fish_assembly`
 4. **Output:**
-  - *.path_sequence.fasta, each fasta file is an assembled genome.
-  - *.selected_graph.gfa, the organelle-only assembly graph.
-  - get_org.log.txt, the log file.
-  - extended_K*.assembly_graph.fastg, the raw assembly graph.
-  - extended_K*.assembly_graph.fastg.extend_embplant_pt-embplant_mt.fastg, a simplified assembly graph.
-  - extended_K*.assembly_graph.fastg.extend_embplant_pt-embplant_mt.csv, a tab-format contig label file for bandage visualization.
-  - The most important file is the ***.fasta** file and all of the other files can be deleted/ignored if the full genome is complete (you can find this information in the log file too).
-  - If you get scaffolds/contigs as a result of the assembly (which was the case for this assembly), you will need to complete the assembly using the `GetComplete.py` file. See below for details.
+    - *.path_sequence.fasta, each fasta file is an assembled genome.
+    - *.selected_graph.gfa, the organelle-only assembly graph.
+    - get_org.log.txt, the log file.
+    - extended_K*.assembly_graph.fastg, the raw assembly graph.
+    - extended_K*.assembly_graph.fastg.extend_embplant_pt-embplant_mt.fastg, a simplified assembly graph.
+    - extended_K*.assembly_graph.fastg.extend_embplant_pt-embplant_mt.csv, a tab-format contig label file for bandage visualization.
+    - The most important file is the ***.fasta** file and all of the other files can be deleted/ignored if the full genome is complete (you can find this information in the log file too).
+    - If you get scaffolds/contigs as a result of the assembly (which was the case for this assembly), you will need to complete the assembly using the `GetComplete.py` file. See below for details.
 
-## Annotate the assembled genome using MitoFish (MitoAnnotator)
+## Annotate the assembled genome using MitoZ
+- Annotation is not automatically done by the pipeline, but this is how to generate it using MitoZ.
+1. First, ensure that MitoZ and its dependencies are downloaded. Visit https://github.com/linzhi2013/MitoZ for details.
+2. Since we are not using it for assembly, just annotation, we will use the -annotate- subcommand. The subcommand requires the following for best performance:
+    - `--fastafile:` Path to .fasta file. In our case, this is where the completed GetOrganelle assembly is.
+    - `--outprefix:` Prefix to new directory that will contain output
+    - `--genetic_code:` Specifies the translation table and which NCBI genetic code to use. We use "2" to specify vertebrates, as that is what we are working with.
+    - `--clade:` Specifies the taxonomic context. We use "Chordata" to specify vertebrates, as that is what we are working with.
+    - **Command:**
+      - `mitoz annotate --fastafile GetOrganelleMitogenomeAssemblyFAga.fasta --outprefix NEW_annot --genetic_code 2 --clade Chordata`
+
+## Visualize the assembled genome using MitoFish (MitoAnnotator)
 1. Visit: [MitoFish](https://mitofish.aori.u-tokyo.ac.jp/)
 2. **Input:** Mitogenome file in FASTA format.
-- Needs to be less than 100 Kb.
-- Note if DNA is circular (complete).
-- Note if visualization is desired (slower run time).
+    - Needs to be less than 100 Kb.
+    - Note if DNA is circular (complete).
+    - Note if visualization is desired (slower run time).
 3. **Output:** Download the files from MitoAnnotator, it only keeps them on the server for 10 days.
-- Annotation.pdf (visualization).
-- genes.fasta.
-- raw.fasta.
-- NCBI.txt.
-- Annotation.txt.
+    - Annotation.pdf (visualization).
+    - genes.fasta.
+    - raw.fasta.
+    - NCBI.txt.
+    - Annotation.txt.
 
 # Finding a Seed Sequence
 1. Search fish scientific name in NCBI Nucleotide database (https://www.ncbi.nlm.nih.gov/nucleotide/)
